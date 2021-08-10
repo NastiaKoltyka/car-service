@@ -1,0 +1,121 @@
+%input-shared {
+  width: 500px;
+  height: 50px;
+  border: none;
+  border-bottom: 1px solid grey;
+  background-color: #ececec;
+  font-size: 18px;
+  color: grey;
+}
+
+.container {
+  margin: auto;
+  width: 1200px;
+  background-color: #ececec;
+  margin-top: 70px;
+  padding: 50px;
+  box-shadow: -8px 7px 5px #8c8989;
+}
+
+.title {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.step1,
+.step2 {
+  display: flex;
+  flex-direction: column;
+  margin-right: 50px;
+}
+
+.step1 input[type=text],
+.step2 input[type=text] {
+  @extend %input-shared;
+  margin-bottom: 20px;
+}
+
+.step1 input[type=text]:focus,
+.step2 input[type=text]:focus,
+.step1 textarea:focus,
+.step2 textarea:focus,
+input[type=date]:focus {
+  outline: none;
+  border-bottom: 4px solid gold;
+}
+
+.step1 textarea,
+.step2 textarea {
+  @extend %input-shared;
+  resize: none;
+}
+
+.checkboxes {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.checkboxes div {
+  font-size: 21px;
+  color: grey;
+  margin-bottom: 10px;
+
+}
+
+
+input[type=checkbox] {
+  transform: scale(1.5);
+  margin-right: 10px;
+}
+
+input[type=date] {
+  @extend %input-shared;
+}
+
+.description-step2 {
+  margin-top: 50px;
+}
+
+.buttons {
+  width: 300px;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+.buttons button {
+  width: 100px;
+  height: 50px;
+  font-size: 18px;
+}
+
+.send {
+  background-color: green;
+  color: white;
+}
+
+.clear {
+    background-color: black;
+    color: white;
+}
+p{
+    color: rgb(89, 88, 88);
+    font-size: 16px;
+}
+.description-step1 {
+  margin-top: 223px;
+}
+
+.ng-submitted input.ng-touched.ng-invalid {
+  border: solid red 2px;
+}
+
+.ng-submitted input.ng-touched.ng-valid {
+  border: solid green 2px;
+}

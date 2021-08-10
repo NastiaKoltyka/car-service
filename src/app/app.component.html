@@ -1,0 +1,67 @@
+<div class="container">
+  <form [formGroup]="job">
+    <div class="wrapper">
+      <div class="step1">
+        <div class="title">POST A JOB</div>
+        <div>Step 1</div>
+        <div>
+          <input type="text" placeholder="Mark" formControlName="mark">
+          <div *ngIf="job.controls['mark'].invalid && invalid_fields">This field is required </div>
+        </div>
+        <div>
+          <input type="text" placeholder="Model" formControlName="model">
+          <div *ngIf="job.controls['model'].invalid && invalid_fields">This field is required </div>
+        </div>
+        <div>
+          <input type="text" placeholder="Year" formControlName="year">
+          <div *ngIf="job.controls['year'].invalid && invalid_fields">This field is required </div>
+        </div>
+        <input type="text" placeholder="What exactly need to be repaired" formControlName="breakage">
+        <div class="description-step1">
+          <p>Description:</p>
+          <textarea placeholder="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea, soluta."></textarea>
+        </div>
+      </div>
+      <div class="step2">
+        <div class="title"> POST A JOB</div>
+        <div>Step 2</div>
+        <div>
+          <input type="text" placeholder="Category of Work" formControlName="category_of_work">
+          <div *ngIf="job.controls['category_of_work'].invalid && invalid_fields">This field is required </div>
+        </div>
+        <div>
+          <input type="text" placeholder="Subcategory" formControlName="subcategory">
+          <div *ngIf="job.controls['subcategory'].invalid && invalid_fields">This field is required </div>
+        </div>
+        <div>
+          <input type="text" placeholder="Select Emirate" formControlName="select_emirate">
+          <div *ngIf="job.controls['select_emirate'].invalid && invalid_fields">This field is required </div>
+        </div>
+        <div>
+          <input type="text" placeholder="Select Area" formControlName="select_area">
+          <div *ngIf="job.controls['select_area'].invalid && invalid_fields">This field is required </div>
+        </div>
+        <div class="checkboxes">
+          <div><input type="checkbox" formControlName="truck">Need tow Truck</div>
+          <div><input type="checkbox" formControlName="pickup">Need car Pickup</div>
+          <div><input type="checkbox" formControlName="custom_parts">Custom Parts</div>
+        </div>
+        <div>
+          <p>Desired date of repair</p>
+          <input type="date" formControlName="date">
+        </div>
+        <div class="description-step2">
+          <p>Description:</p>
+          <textarea placeholder="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea, soluta."></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="buttons">
+      <button type="submit"class="send"
+        [disabled]="job.controls['mark'].pristine || job.controls['model'].pristine || job.controls['year'].pristine || job.controls['category_of_work'].pristine || job.controls['subcategory'].pristine || job.controls['select_emirate'].pristine || job.controls['select_area'].pristine"
+        (click)="onSubmit()">Send</button>
+      <button (click)="clear()" class="clear">Clear</button>
+    </div>
+  </form>
+</div>
+<!-- [hidden]="!(job.controls['mark'].dirty && job.controls['model'].dirty && job.controls['year'].dirty)" -->
