@@ -3,7 +3,7 @@
   height: 50px;
   border: none;
   border-bottom: 1px solid grey;
-  background-color: #ececec;
+  background-color: #e5d8c200;
   font-size: 18px;
   color: grey;
 }
@@ -11,10 +11,10 @@
 .container {
   margin: auto;
   width: 1200px;
-  background-color: #ececec;
-  margin-top: 70px;
+  background-image: url(../brown-paper-texture.jpg);
+  background-size: cover;
   padding: 50px;
-  box-shadow: -8px 7px 5px #8c8989;
+  box-shadow: -13px 5px 29px #313030;
 }
 
 .title {
@@ -33,19 +33,19 @@
   margin-right: 50px;
 }
 
-.step1 input[type=text],
-.step2 input[type=text] {
+.step1 input[type="text"],
+.step2 input[type="text"] {
   @extend %input-shared;
   margin-bottom: 20px;
 }
 
-.step1 input[type=text]:focus,
-.step2 input[type=text]:focus,
+.step1 input[type="text"]:focus,
+.step2 input[type="text"]:focus,
 .step1 textarea:focus,
 .step2 textarea:focus,
-input[type=date]:focus {
+input[type="date"]:focus {
   outline: none;
-  border-bottom: 4px solid gold;
+  border-bottom: 4px solid #0075ff;
 }
 
 .step1 textarea,
@@ -57,23 +57,20 @@ input[type=date]:focus {
 .checkboxes {
   display: flex;
   flex-direction: column;
-
 }
 
 .checkboxes div {
   font-size: 21px;
   color: grey;
   margin-bottom: 10px;
-
 }
 
-
-input[type=checkbox] {
+input[type="checkbox"] {
   transform: scale(1.5);
   margin-right: 10px;
 }
 
-input[type=date] {
+input[type="date"] {
   @extend %input-shared;
 }
 
@@ -98,15 +95,23 @@ input[type=date] {
 .send {
   background-color: green;
   color: white;
+  cursor: pointer;
+}
+.send:hover {
+  background-color: rgb(17, 73, 17);
 }
 
-.clear {
-    background-color: black;
-    color: white;
+.send:disabled {
+  background-color: rgb(80, 167, 80);
 }
-p{
-    color: rgb(89, 88, 88);
-    font-size: 16px;
+.clear {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+p {
+  color: rgb(89, 88, 88);
+  font-size: 16px;
 }
 .description-step1 {
   margin-top: 223px;
@@ -118,4 +123,112 @@ p{
 
 .ng-submitted input.ng-touched.ng-valid {
   border: solid green 2px;
+}
+.background {
+  background-image: url(../depositphotos_13590178-stock-photo-stainless-steel-wrench-set.jpg);
+  height: 100vh;
+  padding-top: 70px;
+  background-size: cover;
+}
+.error {
+  position: relative;
+  top: -17px;
+  color: red;
+}
+@media only screen and (max-width: 1200px) and (min-width: 768px) {
+  .background {
+    padding-top: 150px;
+    max-width: 1200px;
+    min-width: 768px;
+    height: 100vh;
+    min-height: 1125px;
+  }
+  .container {
+    margin: auto;
+    min-width: 321px;
+    max-width: 768px;
+    padding: 0px;
+    box-shadow: none;
+  }
+  .wrapper {
+    display: block;
+    padding: 14px 135px;
+  }
+  .title {
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .background {
+    height: 100px;
+    min-width: 321px;
+    max-width: 768px;
+    background-image: none;
+    padding: 0;
+    height: 100vh;
+    min-height: 1125px;
+  }
+  .container {
+    margin: auto;
+    min-width: 321px;
+    max-width: 768px;
+    padding: 80px 0px;
+    box-shadow: none;
+    min-height: 100%;
+  }
+  .wrapper {
+    display: block;
+    padding: 14px 135px;
+  }
+  .title {
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  .background {
+    height: 100px;
+    min-width: 321px;
+    max-width: 768px;
+    background-image: none;
+    padding: 0;
+    height: 100vh;
+    min-height: 1125px;
+  }
+  .container {
+    margin: auto;
+    min-width: 321px;
+    max-width: 768px;
+    padding: 80px 0px;
+    box-shadow: none;
+    min-height: 100%;
+  }
+  .wrapper {
+    display: block;
+    padding: 14px 135px;
+  }
+  .title {
+    text-align: center;
+    font-size: 30px;
+  }
+  %input-shared {
+    margin-bottom: 50px;
+    height: 70px;
+    font-size: 24px;
+  }
+  .checkboxes div {
+    font-size: 24px;
+    margin-bottom: 50px;
+  }
+  .buttons button {
+    width: 150px;
+    height: 70px;
+    font-size: 24px;
+  }
+  .buttons {
+    width: 350px;
+    margin-top: 70px;
+  }
+  
+  
 }
